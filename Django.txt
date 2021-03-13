@@ -1,0 +1,1387 @@
+		DJANGO REQUIRMENTS-01
+
+i. Python 3.0 or Higher
+          python --version              [check this version in Command prompt/Power shell]
+
+ii. PIP
+         pip --version 
+
+iii. Text/Code Editor/IDE - Notepad++, VS Code
+iv. Web Browser
+         Google Chrome,Mozila Firefox, Edge
+
+	               CHECK DJANGO IS INSTALLED OR NOT  -02
+
+i.django-admin --version         [check Django is installed or not in command prompt]
+
+	               HOW TO INSTALL DJANGO  -03
+
+01. Separate virtual Environment
+              i. Install Virtual Environment Wrapper
+                         Syntex:- pip install virtualenvwrapper-win  -> This is used to install virtual environment wrapper.
+
+             ii.Create Virtual Environment(VE)
+                         Syntex:- mkvirtualenv   "env_name" -> This is used to create virtual enviroment. it will automatically active environment.
+  
+             [Exit-Command prompt]
+             iii. Active VE
+                         Syntex:- workon           "env_name" -> This is used activate environment.
+
+             iv. Install Django in Created VE
+                         Syntex:- pip install django  ->First activate environment then run the command to install django within active environment.
+
+             v. Check version
+                         Syntex:- django-admin --version    ->Only drive currently setup when command prompt exit then again Active VE WORKON env_name inital command
+            [Exit-Command prompt. Agin run command prompt and wirteActive"workon env_name"]
+
+
+02. Install Dejango Globally
+              i. Install Django
+                         Syntex:- pip install django   -> This is used to install django 
+
+              ii. Create Django project
+                         Syntex:- django-admin startproject  project_name 
+                         
+                    ex:- 1st: C:\Users\Nasir2>cd ..
+                          2nd: C:\Users>cd ..
+                          3rd: C:\>cd DjangoProject
+                          4th: C:\DjangoProject>django-admin startproject schoolproject
+                          5th: C:\DjangoProject>cd schoolproject
+                          6th: C:\DjangoProject\schoolproject>python manage.py runserver
+
+                  copy:- [run  6th equation enter then successfully command and copy this path]
+
+                 paste:- [any web Browser Open and paste this path]
+                          1st:- Google chrome :-     http://127.0.0.1:8000/            [The install worked successfully! Congratulations!]
+  
+    Uninstall Django Globally
+              i. Syntex:- pip uninstall django
+	             
+                                CREATE DJANGO PROJECT -04
+
+[Select this drive and create a folder manually then follow this create django project instruction]
+
+i. Syntex:- django-admin-startproject  "project_name"
+
+    ex:- 1st :  C:\>cd DjangoProject                              [manually create drive and folder]
+           2nd:  C:\DjangoProject> 
+           3rd:   C:\DjangoProject>workon mithu
+           4th:    (mithu) C:\DjangoProject>django-admin startproject schoolproject      [school project = project_name]
+
+   run: 1st : (mithu) C:\DjangoProject>cd schoolproject
+           2nd:  (mithu) C:\DjangoProject\schoolproject>
+           3rd:  (mithu) C:\DjangoProject\schoolproject>python manage.py runserver      [SERVER RUN SYNTEX : python manage.py runserver]
+
+copy:- [run  3rd equation enter then successfully command and copy this path]
+           1st: Starting development server at :-        http://127.0.0.1:8000/         [jokhon je path asbe ta copy kore nibo]
+
+paste:- [any web Browser Open and paste this path]
+          1st:- Google chrome :-     http://127.0.0.1:8000/            [The install worked successfully! Congratulations!]
+
+How to stop server
+          i. server Stop:-  ctrl + c      [stop command prompt]
+         ii. Command prompt clear :- cls
+        iii. Command prompt exit :- exit / quit
+
+
+                              UNINSTALL FROM SEPARATE ENVIRIONMENT -05
+
+Uninstall
+            i. Active Virtual Environment(VE)
+                       Syntex:- workon   "env_name" -> This is used to activate envirionment.
+           
+           ii. Uninstall Django from VE
+                       Syntex:- pip uninstall django  -> This is used to uninstall django.
+
+           iii. Remove Virtual Environment
+                       Syntex:- rmvirtualenv  "env_name" -> This is used to remove virtual environment.
+     
+           iv. Uninstall Virtual Envirionment Wrapper
+                       Syntex:-   pip uninstall virtualenvwrapper-win  -> This is used to uninstall virtual environment wrapper.
+
+
+	           DEJANGO PROJECT DIRECTORY STRUCTURE -06
+
+i. __init__.py -> The folder which contains __init__.py file is considered as python package.
+
+ii. wsgi.py -> WSGI(web server gateway interface) is a specification that describes how a web server communicates with web 
+                        and how web applications can be chained together to process one request. 
+                        standard for synchronous python apps.
+
+iii. asgi.py -> ASGI(Asynchronous server gateway interface), intended to provide a standard interface between async-capable python
+                       web servers, frameworks,and applications, provides standard for both asynchronous and synchronous apps.
+
+iv. setting.py -> This file contains all the information or data about project settings.
+                             ex:- Database config information , Template, Installed application, etc.
+
+v. urls.py -> This file information of url attached with application.
+
+vi. manage.py -> It is django's command line utility also sets the DEJANGO_SETTINGS_MODULE environment variables so that it points
+                              to your project's setting.py fie. Generally when working on a single Django project, it's easier to use manage.py than django-admin.
+
+
+
+
+
+
+  
+		DJANGO START
+	HOW TO START/CREATE APPLICATION -06
+
+Creating Multiple Appliction
+             i.go to project folder
+            ii. run command python manage.py srartapp app_name   
+           iii. python manage.py startapp app_name    
+
+How to install Application in our project
+             i. We install application in our project using setting.py file.
+                        
+             1st: open setting.py file
+            2nd: INSTALLED_APPS - [
+                                      'django.contrib.admin',
+                                      'application_name1',
+                                      'application_name2',
+                                       .................................,
+                                      ................................... ,
+                                                          ]
+            3rd: save setting.py file
+
+
+EX : Overall step by step
+         i. Create django project: django-admin startproject project_name   [create_project_name = student]
+         ii.Changing directory to django project: cd ..   [drive_name/folder_name] student
+        iii.Create django application_1 : python manage.py srartapp app_name1  [course]
+        iv. Create django application_2 : python manage.py srartapp app_name2  [result]
+         v. Create django application_3 : python manage.py srartapp app_name3  [fees]
+
+        vi. Add/Install application to django project
+                      -> Open setting.py     {project_name -> setting.py}
+                      -> Add course,fees,result
+                                  INSTALLEC_APPS = [
+                                                                         'django.contrib.admin',
+                                                                         'course',
+                                                                         'result',
+                                                                         'fees',
+                                                                         ]
+       vii. save setting.py
+
+
+
+
+
+
+		FUNCTION BASED VIEW - 07
+
+01. View : A function based view, is a python function that takes a web request and returns a wab response.
+          i.  write -> Open views.py
+              from django.http import HttpResponse
+              Syntex :- def function_name(request):
+                                       return HttpResponse('html/variable/text') 
+
+       ii. write -> Open urls.py
+                           from course import views       [from application_name import views]
+                          urlpatterns = [
+                                                   path('admin/', admin.site.urls),
+                                                   path('urls_name/', views.funcation_name),
+                                                  ]
+
+
+
+
+
+                                              
+
+		URL DISPATCHER - 08
+
+02. Multiple application iside project 
+        i. write -> Open views.py        [course,fees]
+       ii. write -> Open urls.py
+                          from course import views as cv        [alias_name : as cv]
+                          from fees import views as fv 
+                         
+                          urlpatterns = [
+                                                   path('admin/', admin.site.urls),
+                                                   path('urls_name/', cv.funcation_name),
+                                                   path('urls_name/', fv.funcation_name),
+                                                  ] 
+
+
+03. Create URL pattern inside Application  independent views
+           from django.urls improt include,path   
+           Syntex-> i. include(module,namespace=None)               [module- url conf module (or module name)
+                   or   ii. include(pattern_list)
+                  or   iii. include((pattern_list,app_namespace),namespace=None)
+
+          from django.urls import path, include
+         urlpatterns = [
+                                   path('cor/', include('course.urls'))            ex:- path('urls_name/', include('application_name.urls')
+                                   ]
+
+
+ Ex:-  
+Create Course(urls) In views:           
+               from django.urls import path
+               from . import views
+               urlpatterns = [
+                                       path('learndj/', views.learn_django),
+                                       ]
+
+Create fees(urls) In views:  
+               from django.urls import path
+               from . import views
+               urlpatterns = [
+                                      path('learnpy/', views.fees_py),
+                                     ]
+
+Main urls:
+             from django.urls import path, include
+             urlpatterns = [
+             path('admin/', admin.site.urls),                             [Browser Open = http://127.0.0.1:8000/cor/learndj]
+             path('cor/', include('course.urls')),
+             path('fe/', include('fees.urls')),
+             ]      
+ 
+
+
+
+
+
+
+		TEMPLATE - 09
+
+01.Template is used by view function to represent the data to user.
+        i. Create templates folder inside project folder. folder_name definitely use templates.
+       ii. Open setting.py
+       iii. variable declar
+                TEMPLATES_DIR = BASE_DIR / 'templates'              ex :- HTML = 'templates'
+
+       iv. INSTALLED_APP = [
+                                                 'course',
+                                                 'fees',
+                                                 ]
+
+       v. TEMPLATES = [
+                         {
+                                'DIRS': [ variable_declar_name_past],                      ex:- DIRS': [TEMPLATES_DIR] 
+                         }
+                                      ] 
+
+
+02.Templates inside Application  folder:-
+	i.Create templates folder inside Application
+	ii.Open setting.py
+	iii.iv. INSTALLED_APP = [
+                                                 	          'course',
+                                                	          'fees',
+                                                                ]
+	iv.TEMPLATES = [
+		{
+		       'DIRS': [ ],
+		       'APP_DIRS': True,                           ->False thakle True kore dite hobe
+		}
+		             ]
+
+03.Templates inside Project and Application folder
+	i.Create templates folder inside Project and Application
+	ii.Open setting.py
+	iii. variable declar
+                                 TEMPLATES_DIR = BASE_DIR / 'templates' 
+
+	iv. INSTALLED_APP = [
+                                                 	          'course',
+                                                	          'fees',
+                                                                ]
+
+	v.TEMPLATES = [
+		{
+		       'DIRS': [  TEMPLATES_DIR],
+		       'APP_DIRS': True,  
+		}
+		             ]
+
+03 no equation solve(inside project & Application)
+       i. Create main folder in templates
+      ii.Create Inner folder in views.py
+      iii.main urls.py 
+                  Ex:-from . import views                                       ->must be views import kore nite hobe
+                         urlpatterns = [
+                                     path('admin/', admin.site.urls),
+                                     path(' ', views.home),
+                                                  ]
+
+
+
+Rendering Templates Files: (html file access process in views.py)
+
+Syntex:- 1st. from django.shortcuts import render                                    ->render() function
+              2nd. def function_name(request):
+                                Dynamic Data, if else, any python code logic
+                                return render(request, 'create_templates_name', contex=dict_name,
+                                                          content_type=MIME_type, status=None,uning=None)
+
+     Ex:- from django.shortcuts import render
+             def function_name(request):
+                               return render(request, 'mithu.html')    
+
+
+Create Templates Folder and Files: 
+     Ex :- def function_name(request):
+                               return render(request, 'course/courseone.html')    
+
+
+
+
+
+
+		DYNAMIC TEMPLATES FILES - 10
+
+    i.Open views.py
+  ii. from django.shortcuts import render
+      def function_name(request):
+                      Dynamic Data, ef else, any python code logic
+                      return render(request,courrent_templates_name, context=dict_name)
+
+  Ex: form django.shorcuts import render
+         def learn_django(request):
+                      cname = 'Django'
+                      duration ='4 months'
+                      seats = 10
+                      django_details  = {'nm' : cname, 'du' : duration, 'st': seats}              ex: Passing  Dynamic  templates
+                      return render(request,'course/courseone.html', django_details)   
+
+
+     ->Receiveing Dynamic template In HTML file:
+     <body>
+    <h1> Name : {{nm}}  Duration : {{du}}  Seates : {{st}} </h1>     
+     </body>    
+
+
+01. FILTERS:- When we need to modify variables before dispaying we can use filters. pipe '|' is used to appyly.
+	Syntex:- { {variable | filter} }
+	Ex:- { {name | upper} }             output-> all letter capital letter 
+	
+	i.Syntex:- { {variable | filter : argument} }       
+	  Ex:- { {artical | truncateword :40} }            outpur-> kichu word kete dibe
+
+	ii.Syntex:- { {variable | filter | filter : argumente} }
+                      Ex:- { {artical | upper | truncatechars :4} }
+
+	iii.Syntex:- { {variable | filter} }
+	     Ex:- { {name | capfirst} }           output-> It capitalizes the first character of the value.
+
+	iv.Syntex:- If value evaluates to False, uses the given default, Otherwise,use the value
+	Ex:- { {value | default : "Nothing"} }
+
+	v.Syntex:- It returns the length of the value. This works for both string and list.
+	Ex:- { {value/variable | length } }
+
+	vi.Syntex:- it converts a string into all lower case.
+	Ex:- { {value | lower} }
+
+	vii.Syntex:- Sliceing 
+	     Ex:- { {value | slice: '2'} }
+
+	viii.Syntex-> truncatechars :4
+                         Ex:- { {value | truncatechars :4} }
+
+
+	ix. Time and date
+	     Ex:- { {value | date:"SHORT_DATE_FORMAT"} }   -> Only date
+	     Ex:- { {value | time:"TIME_FORMAT"} }                   -> Only time
+                       Ex:- { {value | date:"DATETIME_FORMAT"} }        ->DateTime
+
+	x. FloatFormat
+	 Ex:- { {value | floatformat} }         Output-> 56.377654 = 56.4
+	 Ex:- { {value | floatformat:3} }         Output-> 56.377654 = 56.378
+
+
+02.IF Tag:-  {% if %} tag:- The {% if %} tag evaluates a variable, and if that variable is "true".
+	i.Syntex:- {% if Variable %}
+                                              .....................
+                                    {%endif%}
+                     Ex:- <h1> Hello {{nm}}</h1>
+
+03.AND Operator:
+                i.Syntex:- {% if Variable and Variable %}
+                                              .....................
+                                    {% endif %}
+                     Ex:- <h1>For course {{nm}} {{st}} seat available</h1>
+
+04. OR,   IF NOT variable_name
+
+
+05.IF Tag with Condition:-
+	i.Syntex:- {% if  condition %}
+                                              .....................
+                                    {% endif %} 
+                     Ex:-{% if  nm == 'Django' %}                     ->condition ==, !=,  <, >, <=, >=, in, not in, is and is not
+	                   <h1> Hello {{nm}}</h1>
+	           {%endif%}
+
+	 Ex:-{% if  nm == 'Django' or st == 5 %} 
+  		<h1> Hello {{nm}}</h1>
+	       {% endif %}
+
+06.ElIF: 
+                 Ex:- {% if nm %}
+                         <h2>Hello: {{nm}}</h2>
+                         {% elif st %}
+                        <h2>Seates : {{st}} </h2>
+                        {% else %}
+                        <h2>No Course Available</h2>
+                        {% endif %}
+
+
+
+(forloop.parentloop = for Nested loop)
+(forloop.counter = The current iteration, 1-index start)
+(forloop.counter0 = The current iteration, 0-index start)
+
+07.FOR LOOP TAG: 				Empty for loop Tag
+	i.Syntex:- {% for variable in variable %}                        ii. Syntex:-{% for variable in variable %}
+                                           { { variable} }			                                { { variable} }
+                                   {% endfor %}				    {% empty %}
+							           Empty
+Ex:-<ul>							   {% endfor %}
+        {% for nm in names %}
+        <li>{{nm}}</li>
+        {% endfor %}
+    </ul>
+							   
+    .KEY for loop Tat
+ 	iii.Syntex:- {% for key, value in data.items %}
+		       { { key} } : { {value} }
+		  {% endfor %}
+
+08.NESTED FOR LOOP:
+      Ex:- {% for key, value in data.items %}                               ->Outer for loop
+              {{key}} = {{value}} <br>
+              {% for k, v in value.items %}                                         ->Inner for loop
+              {{forloop.parentloop.counter}} {{k}} = {{v}} <br>
+              {% endfor %}
+              {% endfor %}
+
+
+
+
+
+
+		STATIC FILES-11
+
+CSS files, Javascript files,image files, video files etc are considered as static in Django.
+note:- static likha small letter hote hobe
+
+01.	i.Create static folder inside Root Project folder then inside static folder we create.
+	ii.Open setting.py
+	iii.variable declare
+		STATIC_DIR = BASE_DIR/ 'static'
+	
+	iv. STATIC_URL  = '/static/'
+                  v.STATICFILES_DIRS=[variable_declare,]                   ->STATICFILES_DIRS=[STATIC_DIR,]
+
+
+USE static files in Template files:
+	Ex:- templates/course
+	        courseone.html
+	       <!DOCTYPE html>
+ 	       {% load static %}                          //Load static files
+  	      <html> 
+		<link href='{% static "css/style.css" %}'>                  //Reference Static files
+		<body>
+		        <h1> .......</h1>
+		        <img src='{% static "images/love.jpg" %}'>
+		</body>
+	     </html>
+
+
+Write some Example:-
+	i.{% load static %}
+	ii.{% static filename %}
+	iii.{% static path/filename %}
+	iv.{% static path/filename as variable_name %}
+
+            ex:-<link rel="stylesheet" href="{% static 'style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<img src='{% static "images/love.jpg" %}'>
+
+	{% static "images/love.jpg" as mylove %}
+	<img src="{{mylove}}">
+
+
+02. Create static folder and files inside Application:-
+	note:- setting.py kono kichu likha lagbe na
+	i.Create static folder in Application folder
+
+Ex:- Ex:- templates/course
+	        courseone.html
+	       <!DOCTYPE html>
+ 	       {% load static %}                          //Load static files
+  	      <html> 
+		<link href='{% static "course/css/style.css" %}'>                  //Reference Static files
+		<body>
+		        <h1> .......</h1>
+		        <img src='{% static "course/images/love.jpg" %}'>
+		</body>
+	     </html>
+
+
+03Creat static folder and files inside Project & Application
+	note:- setting.py manually setup kore dite hobe
+	note:-Root static r css file je kono application use korthe parbo, korar age sodhu HTML link kore dite hobe
+
+	i.Open setting.py
+	ii.variable declare
+		STATIC_DIR = BASE_DIR/ 'static'
+	
+	iii. STATIC_URL  = '/static/'
+                  v.STATICFILES_DIRS=[variable_declare,]                   ->STATICFILES_DIRS=[STATIC_DIR,]
+
+
+
+
+
+
+
+			START TAG
+		TEMPLATE INHERITANCE- 12
+
+{% extends %} - The extends tag is used to inherit template. it has no end tag.
+note:- if we use {% extends %} in a template, it must be the first template tag in the template.
+
+	i.Syntex:- {% extends 'parent_tamplate_name' %}  	
+		Ex: {% extends "folder_name/base1.html" %}
+		       {% extends "folder_name/base2.html" %}
+
+BLOCK Tag:- {% block %} - The block tag is used to for overriding specifie parts of a template.
+
+	i.Syntex:- {% block Block_Name %}........{% endblock Block_name %}
+		Ex:-{% block content %}.........{% endblock content %}
+
+	
+
+
+01.Creating BASE/PARENT & CHILD Template
+note:-We write common codes in base template and create blocks for code which may vary page to page. Later this template
+          will be inherited by child templates and child templates will override created blocks.
+
+
+Ex-1:-BASE/PARENT template				        Ex-1(i):-CHILD-1		       Ex-1(ii):-CHILD-2
+      base.html						        home.html			       about.html
+      <html>                                                                                                                   {% extends "base.html" %}		       {% extends "base.html" %
+      <head>  						    
+      <title>{% block title %}Other {% endblock title%}</title>                            {% block title %}	                        {% block title %}
+     </head>						       Home Page			       About Page
+     <body>							       {% endblock title %}		      {% endblock title %}
+     {% bolck content %} {% endblock content %}
+     </body>						       {% block content %} 		      {% block content %}
+     </html>						       Hello I am Sarwar		       Hi I am child 2
+							       {% endblock content %}		      {% endblock content %}
+
+
+.Syntex:-{ {block.super}} -> parent html {% block title %} likha gulo ami child html cai ebong oi block kichu likte cai
+		Ex-1(iii):-CHILD-3
+		       mithu.html
+		      {% extends "base.html" %}	
+		      {% block title %}	 { {block.super}}
+ 		      Parent call (Other)
+		      child-3 won write(I am child-3)
+		     {% endblock title %}
+
+		     {% block content %} 
+		     Hey I am mithu
+		     {% endblock content %}		   
+
+
+		   
+Review:-   i.Create parent html  -> {% block block_name %} {% endblock block_name %}
+
+	Child html:- write code and follow this example
+	ii.Other html file ->  views.py, then Root  <=> urls.py	
+	iii.Application html file -> views.py, then urls.py, then "Root"  <=> urls.py
+
+
+
+
+		CREATE HYPERLINKS & URL TAG - 13
+
+01. Url Tag:-
+	     Syntex:-i. {% url 'url_name' %}
+		ii.{% url 'url_name' as nick_name %}
+		iii.{% url 'url_name'  arg1 = value1 arg2 =value2 %}
+
+02. path( ):- path(route, view, kwargs=None, name=None) ->It returns an element for inclusion in urlpatterns.
+	Syntex:- urlpatterns =[
+	 		path('url_name/' views.function_name, name='user_name'),
+			   ]
+
+	Ex:-
+	html file: <a href="{% url 'aboutus' %}">About</a>
+	
+	note:- jodi Root hoye thake ta hole Root urls.py,   name='user_name'  bosabo
+	note:-ar jodi Application hoye thake ta hole Application urls.py, name='user_name' bosabo
+	
+	urlpatterns =[
+	 	path('about/' views.about, name='aboutus'),
+		      ]
+
+
+		INCLUDE TAG- 14
+
+{% include %} Tag:-
+	    Syntex:-i.{% include temp_var_name %}
+		ii.{% include "template_name.html" %}
+		iii.{% include "folder/template_name.html %}
+	Ex:-
+	    {% include "fees/feesone.html" %}
+
+
+
+
+
+
+
+
+		MODEL-14
+
+
+01.Create our own model class:
+	i.Open models.py
+	     Syntex:- class Class_name(models.Model):
+			field_name=models.FieldType(arg,options)
+
+	Ex:-class Student(models.Model):
+		stuid=models.IntegerField()
+		stuname=models.CharField(max_length=70)
+		stuemail=models.EmailField(max_length=70)
+		stupass=models.CharField(max_length=70)
+
+
+	note:- nothun kore kono attribute add korthe chile [default value set kore dite hobe]. na hoy error dekabe.
+	Ex:-class Student(models.Model):
+		stuid=models.IntegerField()
+		stuname=models.CharField(max_length=70)
+		stuemail=models.EmailField(max_length=70)
+		stupass=models.CharField(max_length=70)
+              v.v.i-> 	comment=models,CharField(max_lenjth=40, default= 'not available')
+
+
+02.How to use Models:
+	i.Open setting.py
+	ii.INSTALLED_APPS=[
+			     'application_name',
+			     ]
+
+	iii.Open Terminal
+  v.v.i->	iv.Run python manage.py makemigrations
+	v..Run python manage.py migrate
+
+03.Display SQL statement:
+	i.Syntex:- python manage.py sqlmigrate application_name dbfile_name
+	          EX:- Python manage.py sqlmigrate enroll 0001
+
+
+
+		SHOW TABLE DATA TO USER-15
+
+                     all() -> It returns a copy of current QuerySet or QuerySet subclass.
+	               Syntex: ModelClass_name.object.all()
+
+Writting code:-
+	1st. Open views.py 
+		First import your own model class from models.py
+		Ex:- Open views.py
+		        from enroll.models import Student
+		        def studentinfo(rquest):
+			stud = Student.objects.all( )
+			return render(request, 'enroll/studetails.html', {'stu':stud})
+
+
+
+
+
+
+
+		ADMIN APPLICATION- 16
+      [note:- Username = root  ,   password = root12  , email=sarwarmithucse@gmail.com]
+
+i.python manage.py runserver
+ii.copy url path 
+iii.Open Browser & paste -> http://127.0.0.1:8000/admin/
+
+CREATE Super User:
+	1st: Open command prompt
+	2nd: python manage.py createsuperuser
+	3rd: Personal Information etc etc .....
+	4th: python manage.py runserver
+
+
+
+
+
+		HOW TO REGISTER MODEL-17
+
+1st:- Open admin.py file which is inside Application folder
+2nd:- Import your own Model Class created inside Application's model.py
+3rd:- admin.site.register(Model_Class_Name)                                                         [note:- admin.py ai ek liner code ti likthe hobe]
+
+Ex:- Open admin.py
+        from enroll.models import Student
+        admin.site.register(Student)
+
+
+[__str__( ) Method]     note:-jano amader amdin e datagulo buja jai je kar data.
+Syntex:- Write this Method in your own model class which is inside models.py
+	def__str__(self):
+		return self.fieldName
+
+	Ex: def__str__(self):
+		return self.stuname
+
+
+		MODEL ADMIN CLASS & HOW TO REGISTER MODEL -18
+
+To show table's all data in admin interface we have to create an Model Admin class in admin.py file of Application folder
+
+01.Creating Class
+	Syntex:-   	Open admin.py 
+		class Model_Admin_Class_Name(admin.ModelAdmin):
+		list_diplay=('fieldname1', 'fieldname2'.......)
+
+
+02.Register Above Created Class
+		admin.site.register(ModelClassName, Model_Admin_Class_Name)
+
+
+Example: class StudentAdmin(admin.ModelAdmin)
+		list_display=('id', 'stuid', 'stuname', 'stuemail', 'stupass')        [note:- list_display sob shomoy ekai thakbe]
+	admin.site.register(Student, StudentAdmin)
+
+
+Register Model by Decorator: uporer code ti ke kom line likhar jonno decorator use kora hoy
+	Syntex:- @admin.register(ModelClassName1,  ModelClassName2....,site=custom_admin_site)
+
+	Ex:    @admin.register(Student)
+	         class StudentAdmin(admin.ModelAdmin):
+                                         list_display=('stuid', 'stuname', 'stuemail', 'stupass')
+
+
+
+
+
+
+
+
+
+		DJANGO FORM-19
+
+To create django form we have to create a new file inside application folder lets say file name is forms.py. Now we can write
+below code inside forms.py to create a form:-
+
+	Syntex:-    1st. Create forms.py
+		2nd. Open forms.py
+		3rd. from django import forms
+		4th. class Form_Class_Name(forms.Form):
+			label=forms.FieldType( )
+			label=forms.FieldType(label='display_label')
+
+
+	Ex: from django import forms		
+	       class StudentRegistration(forms.Form):
+		name=forms.CharField( )                               [here length is not required]
+		email=forms.EmailField( )
+
+
+nextStep:-i.Open views.py
+	ii. from .forms import forms_class_name
+
+	Ex:- from .forms import StudentRegistration
+	        def showformdata(request)
+			fm = StudentRegistration( )
+			return render(request, 'enroll/userregistration.html' {'form':fm})
+
+Then:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration </title>
+</head>
+<body>
+    <form action="" method="get">
+        <table>
+            {{form}} 
+        </table>
+        <input type="button" value="Submit">
+    </form> 
+</body>
+</html>
+
+[note:- {{form.as_table}}, {{form.as_p}}, {{form.as_ul}}, {{form.name_of_field}} ]
+
+
+		CONFIGURE ID ATTRIBUTE- 20
+
+(auto_id=False/True):
+	i.Open views.py
+	ii. from .forms import forms_class_name
+
+	Ex:- from .forms import StudentRegistration
+	        def showformdata(request)
+			fm = StudentRegistration(auto_id=True )        [v.v.i = auto_id='some_%s',   or  auto_id= False, or  auto_id= True, or  auto_id= 'mithu']
+			return render(request, 'enroll/userregistration.html' {'form':fm}
+
+
+Configure label tag:- label_suffix  - It's possible to customize that character, or omit it entirely, using the label_suffix parameter.
+
+	i.Open views.py
+	ii. from .forms import forms_class_name
+
+	Ex:- from .forms import StudentRegistration
+	        def showformdata(request)
+			fm = StudentRegistration(auto_id=True, label_suffix=' ')        [v.v.i =  attribute r por ami ki symbol rakbo ta manually set kore deoa jai ar maddhome]
+			return render(request, 'enroll/userregistration.html' {'form':fm}
+
+Dynamic Initial Value:
+	Ex:- fm = StudentRegistration(auto_id=True, label_suffix=' ' , initial={'name': 'Enter Your name'} )
+
+		ORDERING FORM FIELS -21
+
+[note form.py te ami jei Order likeci kinthu ami oi vabhe chi na tar jonno ai order ti use kora hoy]
+
+	Ex:def showdataform(request):
+                        fm = StudentRegistration()
+                        fm.order_fields(field_order=['university_name', 'first_name', 'last_name', 'email'])                 [note:- Order maintain kora hoyce. forms.py te ulto-palta likha chilo ai khane jei vabhe order deoa hoyce sei vabhi dekbe output]
+                        return render(request, 'enroll/userregistration.html', {'form':fm})
+
+
+		RENDER FORM -22
+
+
+Render Form Field Manually:-Each field is available as an attribute of the form using {{form.name_of_field}}
+	{{field.label}}
+	Ex:-{{form.name.label}} 		[{{form.name.label_tag}},  {{form.name.value}},  {{form.name.label}},  {{form.name.html_name}},  {{form.name.help_text}},  {{form.name.label}}, {{field.is_hidden}} ]
+
+
+ 
+		RENDER FORM LOOP- 23
+
+[note ek ek kore na likhe sob gulo ek sathe dekhanor jonno for loop use kora hoy]
+
+	Ex: <form action="" method="get">
+        	       {% for field in form %}
+        	       {{field.label_tag}}
+                         {{field}} <br>
+                         {% endfor %}
+
+                        <input type="button" value="Submit">
+                        </form>
+
+[note jodi hidden kono kichu use kora hoy ta hole ]
+	Ex: [note -> forms.py ] key = forms.CharField(widget=forms.HiddenInput())
+        
+   html->	  {% for hidden in form.hidden_fields %}
+        	  {{hidden}} 
+        	  {% endfor %}
+
+kono likhai show korbe na tobe kaj korbe 
+
+
+
+		[gmail upload kora hoyce uporer tuoko]
+
+
+
+		FORM FIELD-24
+
+01.Field Arguments :-
+	i. required - It takes True of False value, By defauld,each Field Class assumes the required value is True.
+	ii. label - The label argument lets you specify the "human-friendly" label for the field.
+	iii. label_suffix - The label_suffix argument lets your override the form's label_suffix on a per-field basis.
+	iv. [ help_text,  error_messages,   validators,    localize,   widget   ]
+
+
+
+
+
+02.Widgets in Django:- A widget is Django's represention of an HTML input element.
+	[note:- (TaxtInput  = NumberInput, EmailInput,  URLInput, PasswordInput,  HiddenInput, DateInput, TimeInput, 
+                               Textarea, CheckboxInput, Select, NullBooleanSelect, SelectMultiple, RadioSelect, MultipleHiddenInput, SplitDateTimeWidget=  ]
+
+   attrs - A dictionary containing HTML attributes to be set on the rendered widget
+   Ex:- feedback=forms.CharField(widget=forms.TextInput(attrs={'class':''somecss1 somecss2', 'id':'uniqueid'}))
+
+
+
+
+		GET vs POST-25
+[note:- HTML form file likha hoye thake <form action="" method="get">   ]
+        
+
+GET:- Get should be used only for request that do not affect the state of  the system.
+
+POST:- Any request that could be used to change the state of the system should use POST.
+
+
+[CSRF / XSRF (Cross site request forgery) ]
+
+	Ex: <form action="" method="post">        [ method="post"
+        	      {% csrf_token %}               	                  [{% csrf_token %} ]
+       	      {{form.as_p}}
+
+                       <input type="Submit" value="Submit">
+                      </form>
+
+
+
+		GET DJANGO FORM DATA -26
+
+Type: Get django form data two type
+		i. Validate Data / Field Validation
+		ii. Get Cleaned Data 
+
+How To send GET / POST request:-
+
+Django Form and Field Validation:-
+	i.  is_valid( ) - This method is used to run validation and return a Boolean designating whether the data was valid as True or not as False.
+		Syntex:- Form.is_valid( )
+
+	ii.cleaned_data - This attribute is used to access clean data.
+
+
+Get Django Form Data in Terminal:-
+	1st. First of all Create form inside forms.py file
+		Ex: from django import forms
+		      class StudentRegistration(forms.Form):
+				name = forms.CharField( )
+				email = forms.EmailField( )
+
+	2nd. Second of all Get submitted Data views.py
+		Ex: from .forms import StudentRegistration
+		       def showformdata(request):
+			     if request.method=='POST':
+				fm = StudentRegistration(request.POST)
+				if fm.is_valid( ):		
+					print('Form Validated')
+					print('Name:', fm.cleaned_data['name'])
+					print('Email:', fm.cleaned_data['email'])
+			      else:
+				 fm = StudentRegistration( )
+			      return render(request, 'enroll/userregistration.html', {'form':fm} )
+
+	3rd. Get object from views.py in template file
+   		Ex: userregistration.html
+		      <!DOCTYPE html>
+		      <html>
+		      <body>
+    		          <form action="" method="post">    
+        			{% csrf_token %}               
+        			{{form.as_p}}
+
+        			<input type="Submit" value="Submit">
+    		         </form>
+		</body>
+		</html>
+
+
+		HTTP RESPONSE REDIRECT -27
+
+[note :- successfuly form puron korar jonno ]
+
+	Ex: from django.http import HttpResponseRedirect
+	       def thankyou(request):
+    		return render(request, 'enroll/successfuly.html')
+
+	       def showformdata(request):
+		[upor er code likhar por sodhu ai line ti likha lagbe]
+		return HttpResponseRedirect('/regi/successful/')                       urls.py -> path dite hobe
+
+
+	
+
+		
+		FORM FIELD - 28
+
+
+01.	 Syntex:- CharField(**kwargs)
+	Ex : min_length, max_length, strip=False, error_message={'required': 'Enter Your Name'}
+      	Empty value: True
+
+
+02.	Syntex:- BooleanField(**kwargs)
+	Default widget: CheckboxInput
+	Empty value: False
+	Normalizes to: A python True or False value.
+
+03.	Syntex:- IntegerField(**kwargs)
+	Ex : min_value, max_value
+	Empty value: None
+	Normalizes to: A python integer
+
+04.	Syntex:- DecimalField(**kwargs)
+	Ex : min_value, max_value,  max_digits, max_decimal_places, max_whole_digits
+	Empty value: None
+	Normalizes to: A python decimal
+
+05.	Syntex:- FolatField(**kwargs)
+	Ex : min_value, max_value
+	Empty value: None
+	Normalizes to: A python float
+
+07.	Syntex:- SlugField(**kwargs)
+	Ex:  allow_Unicode
+	Empty value: an empty string
+
+08.	Syntex:- EmailField(**kwargs)             
+	Ex : min_length, max_length,
+	Normalizes to: A string
+
+09.	Syntex:- URLField(**kwargs)
+	Ex : min_length, max_length
+
+10. [note :- Built-in Field onake gulo ace image,choice, etc etc.......]
+	Normalizes to: A string,
+
+
+		
+		[Buitl-in Validators]
+	CLEANING & VALIDATING SPECIFIC FIELD- 29
+
+clean_<fieldname>( ) - This method is called on a form subclass where <fieldname> is replaced with the name of 
+		   the form field attribute.
+
+[note: kono attribute specific field nije nijer moto kore sajeye likhar jonno ai method ti use kori ]
+
+          Ex:- forms.py
+	form djnago import forms
+	class StudentRegistration(forms.Form):
+		name = forms.CharField( )
+		email = forms.EmailField( )
+		password = forms.CharField(widget=forms.PasswordInput )
+
+		def  clean_name(self):                                              [name ke nijer moto kore sajeye nicci name = forms.CharField( )]
+			valname =  self.cleaned_data['name']
+			if len(valname) < 4:
+				raise forms.ValidationError('Enter more than or equal 4')
+			return valname
+
+
+Validation of complete Django Form at once: Type of three ->
+	clean( ) -> i. running to_python( )
+		ii.validate( )
+		iii. run_validators( )
+
+Open froms.py->def clean(self):
+		cleaned_data = super().clean() 
+        		valemail = self.cleaned_data['email'] 
+        		valpassword = self.cleaned_data['passw'] 
+
+        		if len(valemail) < 14:
+            		           raise forms.ValidationError('Email shoudl be more than or equal 14')
+
+        	                 if len(valpassword) < 5:
+                                              raise forms.ValidationError('Password should be more than or equal 5')
+
+
+
+		[Using Built-in validators]
+	USING BUILT-IN VALIDATORS- 30
+
+We can use Built-in Validators, available in django.core module.
+
+           Ex:-forms.py
+	from django.core import validators
+	from django import forms
+	class StudentRegistration(forms.Form):
+		name = forms.CharField(validators=[validators.MaxLengthValidator(10)])
+		email= forms.EmailField()
+
+
+
+Create Custom Form Validators:-
+          Ex:- forms.py
+	from django.core import validators
+	from djnago import forms
+	def starts_with_s(value):
+		if value[0] ! = 'S'
+			raise forms ValidationError('Name Should start with S')
+
+	class StudentRegistration(forms.Form):
+		name = forms.CharField(validators=[start_with_s])
+
+		email= froms.EmailField( )
+
+		
+		FORM VALIDATION-(Match two field value) -31
+
+         
+           Ex:- forms.py
+	from djnago import forms
+	class StudentRegistration(forms.Form):
+		name = forms.CharField( )
+		password = forms.CharField(widget=forms.PasswordInput)
+		rpassword = forms.CharField(widget=forms.PasswordInput)
+
+		def clean(self):
+		        cleaned_data = super( ).clean( )
+		        valpwd = cleaned_data['password']
+		        retypepwd = cleaned_data['rpassword']
+		        if valpwd != retypepwd:
+			raise forms.ValidationError('Password No Matched')
+
+
+
+
+		FIELD ERROR -32
+
+01.  {{ form.name.errors }}  Ex;- {{ form.errors }}       Specific one attribute in work
+02.  {{Dynamic_Templates_Name.non_field_error}}        Ex:- {{ form.non_field_error }}   - This should be at the top of the form and the templates lookup for errors on each field.
+
+Styling Django Form Errors:
+	i.error_css_class = 'error'
+	ii. required_css_class = 'required'
+
+	Ex:- class StudentRegistration(forms.Form):
+		error_css_class = 'error'
+		required_css_class = 'required'
+		name  = forms.CharField(error_messages={'required':'Enter Your Name'} )
+		email = forms.EmailField(min_length=14, max_length=40, error_messages={'required':'Enter Your Email'} )
+
+
+
+
+
+		UPDATE & DELETE  / FORM DATABASE in DJANGO -33
+
+Save Update and Delete Form Data to/from Database in Django:
+Write Code :- 1st. Create Forms forms.py
+	       2nd. Open viws.py 
+	       3rd. Create HTML file
+	       4th. Open models.py
+	       5th. Open admin.py
+
+->  Ex-01:-Create forms.py
+	from django import forms
+	from django.core import validators
+
+	class StudentRegistration(forms.Form):
+   	 	name = forms.CharField(error_messages={'required':'Enter Your Name'}) 
+    		email = forms.EmailField(error_messages={'required':'Enter Your Email'}, min_length=14 , max_length=40) 
+    		password = forms.CharField(widget= forms.PasswordInput(), error_messages={'required':'Enter Your Password'})
+
+
+->   Ex-02:-Open views.py
+	from django.shortcuts import render
+	from .forms import  StudentRegistration 
+	from enroll.models import User                         [models.py  ke import kore nite hobe]
+
+	# Create your views here.
+	def showformdata(request):
+    	          if request.method == "POST":
+        		fm = StudentRegistration(request.POST) 
+
+        		if fm.is_valid():
+            		        na = fm.cleaned_data['name'] 
+           		        em = fm.cleaned_data['email'] 
+      		        pwd = fm.cleaned_data['password'] 
+
+     		       reg = User(name=na, email=em, password=pwd)        [passing models.py parameter gulo pass kora hocce jate admin.py save hoy]
+    		       reg.save()
+
+  		      [   [   [ insert/delete = form thke a gulo kora hoy  ]   ]
+                                              [ reg = User(id=1, name=na, email=em, password=pwd)
+                                               reg.save() ] ---> Insert/update
+
+       		           [reg = User(id=1)
+            		            reg.delete() ]---->Delete/Remove
+		     ]--------------------------------------------------------------->Optional part
+
+ 	      else:
+       	            fm = StudentRegistration(label_suffix=' ') 
+
+    	    return render(request, 'enroll/userregistration.html', {'form':fm})
+
+	
+->  Ex-03:- HTML file
+	<body>
+    	      <form action="" method="POST" novalidate>
+   		 {% csrf_token %} 
+       		 {{form.as_p}}
+
+        		<input type="Submit" value="Submit">
+    	      </form>
+                 </body>
+
+
+	
+->  Ex-04:- Open models.py
+	class User(models.Model):
+    		     name = models.CharField(max_length=30)
+   		     email = models.EmailField(max_length=50) 
+   		     password = models.CharField(max_length=50)
+
+->   Ex-05:-Open admin.py
+	from .models import User
+
+	@admin.register(User)
+	class UserAdmin(admin.ModelAdmin):
+	            list_display= ('id', 'name', 'email', 'password') 
+
+				        ^
+				        |
+		         		        |
+		MODELFORM -34   (FORM API)
+		           |
+		           |
+		      ---------
+[note:- keyword(ModelForm,   Meta,    model,   fields) change kora jabe na  ]
+Steps:- i.Create Model Class
+            ii.Create ModelForm Class
+
+01. Syntex:- forms.py       					|         Ex:-forms.py
+               class ModelForm_Class_Name(forms.ModelForm):		|	class Registration(forms.ModelForm):
+	    class Meta:					|		class Meta:
+		model = Model_Class_Name			|			model = User
+		fields = ['fieldname1',  'fieldname2',  'fieldname3']	|			fields = ['name', 'password', 'email']
+		fields = ('fieldname1',  'fieldname2',   'fieldname3')	|
+
+->project
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+Ex-01:-Open models.py				|  Ex-3:-Create forms.py				|Ex-04:-Open views.py						|
+        class User(models.Model):			|            from django import forms			|            from .forms import StudentRegistration				|
+	name = models.CharField(max_length=30)	|            from .models import User			|            from enroll.models import User					|
+	email = models.EmailField(max_length=50) 	|            class StudentRegistration(forms.ModelForm):	|            def showformdata(request):					|
+ 	password = models.CharField(max_length=50)	|            class Meta:					|	     if request.method == "POST":				|
+---------------------------------------------------------------------------------------	        model = User				|		fm = StudentRegistration(request.POST)			|
+Ex-02:-Open admin.py				|	         fields = ['name', 'email', 'password']		|		if fm.is_valid():					|
+           from .models import User			|						|		         na = fm.cleaned_data['name']			|
+           @admin.register(User)				|						|		         em = fm.cleaned_data['email']			|
+          class UserAdmin(admin.ModelAdmin):		|						|		         pwd = fm.cleaned_data['password']			|
+    	list_display = ('id', 'name', 'email', 'password')	|						|		         						|
+						|						|		         reg = User(name=na, email=em, password=pwd)	|
+						|						|		         reg.save()					|
+						|						|	     else:							|
+						|						|	            fm = StudentRegistration()				|
+						|						|	     return render(request, 'enroll/userregistration.html', {'form':fm})	|
+						|						|								|
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+
+		MODEL FORM - 35
+
+[note:- forms.py te modify kore hoyce ]->onno sob code ekai thakbe
+{Model Form =[ blank = True(likhle required dhakbe na)],	[verbase_name (first char capitalized)], [help_text],  [labels] etc...}
+Ex: forms.py
+Example:-from django import forms
+	from .models import User
+	class StudentRegistration(forms.ModelForm):
+    	class Meta:
+        	    	model = User
+        		fields = ['name', 'email', 'password']
+ 
+       		 labels = {'name':'Enter Name', 'email':'Enter Email'}
+
+        		error_messages = {
+            			'name':{'required':'Enter Your Name'},
+            			'email':{'required':'Enter Your Email'},
+            			'password':{'required':'Enter Your Password'},
+           			 }
+
+        		widgets = {
+            			'password':forms.PasswordInput(),
+            			'name': forms.TextInput(attrs={'class':'myclass', 'placeholder':"Enter Your Name"}),
+       			 }
+
+Save( ) Method:
+save(commit=False/True) method - This method creates and saves a database object from the data bound to the form.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Updat:- Manually update views.py
+            Ex:-def showformdata(request):
+            if request.method == "POST":
+	pi = User.objects.get(pk=1)
+        	fm = StudentRegistration(request.POST, instance=pi) 
+	if  fm.is_valid( ):
+	       fm.save( )
+            else:
+	fm = StudentRegistration( )
+           return render(request, 'enroll/userregistration.html', {'form':fm})
+
+
+
+
+		DYNAMIC URL -36
+
+Syntex:- urlpatterns = [
+    		path('student/', views.show_details, name='detail'),
+		path('student/<my_id>/', views.show_details, name='detail'),
+		path('student/<int:my_id>/', views.show_details, name='detail'),
+		path('student/<int:my_id>/<int:my_subid>/', views.show_details, name='detail'),
+		path('student/<int:my_id>/<int:my_subid>/<slug:my_slug>/', views.show_details, name='detail'),
+		]
+
+Path Converters:
+	i. str - Matches any non-empty string, excluding the path separator, '/' . 
+	ii. int - Matches zeros or any positive integer. Returns an int
+	iii. slug - Matches any slug string consisting of ASCII letters or numbers, plus the hyphen and underscore characters.
+		Ex:- building-your-1st-django-site
+	iv. uuid - Matches a formatted UUID. to prevent multiple urls from mapping to the same page, dashes must be included and letters must be lowercase
+		Ex:- 0759d3-688-417e-a8-6c93f00
+	v. path - This allows you to match against a complete URL path rather than a segment of a URL path as with str.
+	
+
+
+Specifying defaults for view arguments:
+	Ex:-Open  views.py
+	        def show_details(request, my_id=1):
+
+
+Passing extra options to View functions:- 
+	path(route, view, kwargs=None, name=None)   - The kwargs argument allows you to pass additional arguments to the view functions or method. It shoduld be a dictionary.
+
+	urls.py:- 
+		urlpatterns = [
+			  path(route, view, kwargs=None, name= None),
+			]
+	Ex:-Open urls.py
+	       urlpatterns = [
+			  path(' ', views.home, {'check':'OK'}),
+		              ]
+
+	       - -> Open views.py
+	              def home(request, check)
+
+
+Dynamic url project
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ex-01:-Open views.py					|Ex-02:-Open project urls.py				|Ex-03:- Open Application urls.py					|Ex-04:- Create show.html			|Ex-04:- Create home.html				|	
+from django.shortcuts import render				|						|								|<html lang="en">				|<html lang="en">					|
+def home(request, check):					|						|								|					|						|
+      return render(request, 'enroll/home.html', {'ch':check})		|from django.contrib import admin			|from django.urls import path						|					|						|
+-----------------------------ex-01-----------------------------------------------   		|from django.urls import path, include			|from . import views						|					|						|
+# def show_details(request, my_id):		                ^	|from enroll import views				|								|<body>					|<body>						|
+          return render(request, 'enroll/show.html', {'id':my_id})  ^	|urlpatterns = [					|urlpatterns = [							|       <h3>This is Show Templates File </h3>	|	<h3>This is Home Template file {{ch}} </h3>	|
+-------------------------------------------------------------------------------------^    	|     path('admin/', admin.site.urls),			|     # Ex-01							|       <h4>{{name}}</h4>			|	<a href="{% url 'detail' 1 %}">Student 1</a>	|
+Ex-02:-(Converter)     					|     path('', views.home, {'check':'OK'}, name="home"),	|     #path('student/<my_id>/', views.show_details, name="detail"),		|       <h4>{{info}}</h4>			|	<a href="{% url 'detail' 2 %}">Student 2</a>	|
+    if my_id == 1:   						|      path('student/', include('enroll.urls')),		|								|       <a href="{% url 'home' %} ">Back to Home</a>|	<a href="{% url 'detail' 3 %}">Student 3</a>	|
+         student = {'id':my_id, 'name':'Sarwar mithu'}    			|     ]						|    #Ex -2 (converter)--->str,int,slug					|</body>					|						|
+    if my_id == 2:						|						|    path('<int:my_id>/', views.show_details, name="detail"),			|</html>					|						|
+         student = {'id':my_id, 'name':'Abu Salman'}			|						|    path('<int:my_id>/<int:my_subid>/',views.show_subdetails, name="subdetail"),|					|	<a href="{% url 'subdetail' 1 4 %}">SubStudent 4</a>|
+    if my_id == 3:						|						|      ]								|					|	<a href="{% url 'subdetail' 2 5 %}">SubStudent 5</a>|
+         student = {'id':my_id, 'name':'Abu Jafar Mehedi'}		|						|													|	<a href="{% url 'subdetail' 3 6 %}">SubStudent 6</a>|
+    return render(request, 'enroll/show.html', student)		|						|								|					|</body>						|														|
+#Ex -03							|						|								|					|</html>						|
+def show_subdetails(request, my_id, my_subid):			|						|								|					|						|
+    if my_id == 1 and my_subid == 4:				|						|								|					|						|											|
+        student = {'id':my_id, 'name':'Md Abu Taher', 'info':'Sub Details'}	|						|								|					|						|
+    if my_id == 2 and my_subid == 5:				|						|								|					|						|
+        student = {'id':my_id, 'name':'Sajada Akther', 'info':'Sub Details'}	|						|								|					|						|
+    if my_id == 3 and my_subid == 6:				|						|								|					|						|
+        student = {'id':my_id, 'name':'Abrar Aayash', 'info':'Sub Details'}	|						|								|					|						|
+							|						|								|					|						|
+    return render(request, 'enroll/show.html', student)		|						|								|					|						|
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
